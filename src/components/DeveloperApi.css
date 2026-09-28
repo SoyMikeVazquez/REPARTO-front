@@ -1,0 +1,172 @@
+.api-section {
+  padding: 100px 0;
+  background-color: var(--light-card);
+  border-top: 1px solid var(--light-border);
+  border-bottom: 1px solid var(--light-border);
+}
+
+.api-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.api-title {
+  font-size: 40px;
+  letter-spacing: -1px;
+}
+
+.api-desc {
+  color: var(--light-text-secondary);
+  font-size: 17px;
+  max-width: 600px;
+  margin: 12px auto 0;
+}
+
+.api-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* Terminal/Editor Simulator */
+.terminal-wrapper {
+  background: #0B0F19;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: var(--shadow-xl);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.terminal-header {
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 12px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.terminal-tabs {
+  display: flex;
+  gap: 8px;
+}
+
+.terminal-tab {
+  background: transparent;
+  border: none;
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  padding: 4px 12px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.terminal-tab:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.terminal-tab.active {
+  background: rgba(255, 255, 255, 0.08);
+  color: #FFFFFF;
+}
+
+.terminal-actions-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.terminal-body {
+  padding: 24px;
+  text-align: left;
+  overflow-x: auto;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #E2E8F0;
+  margin: 0;
+}
+
+.code-line {
+  display: block;
+}
+
+/* Code Highlighting classes */
+.code-keyword { color: #F472B6; } /* pink */
+.code-string { color: #34D399; } /* green */
+.code-function { color: #60A5FA; } /* blue */
+.code-number { color: #FBBF24; } /* yellow/orange */
+.code-comment { color: #64748B; } /* gray */
+
+/* Right Side integrations list */
+.api-info {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.api-info-subtitle {
+  font-size: 28px;
+  letter-spacing: -0.5px;
+}
+
+.api-info-desc {
+  font-size: 16px;
+  color: var(--light-text-secondary);
+  line-height: 1.6;
+}
+
+.integrations-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.integration-card {
+  background: #FFFFFF;
+  border: 1px solid var(--light-border);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: var(--shadow-sm);
+}
+
+.integration-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--light-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.integration-name {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--light-text-primary);
+}
+
+@media (max-width: 968px) {
+  .api-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .api-title {
+    font-size: 32px;
+  }
+  .terminal-body {
+    font-size: 12px;
+  }
+}

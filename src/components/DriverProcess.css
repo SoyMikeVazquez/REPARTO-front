@@ -1,0 +1,237 @@
+.process-section {
+  padding: 100px 0;
+  background-color: var(--light-card);
+  border-bottom: 1px solid var(--light-border);
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.process-info {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.process-tag {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--primary-red);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.process-title {
+  font-size: 36px;
+  letter-spacing: -1px;
+  color: var(--light-text-primary);
+  line-height: 1.2;
+}
+
+.steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.step-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.step-number {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--primary-red);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.step-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.step-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--light-text-primary);
+}
+
+.step-desc {
+  font-size: 14px;
+  color: var(--light-text-secondary);
+  line-height: 1.4;
+}
+
+.vehicle-badges {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.vehicle-badge {
+  background: #FFFFFF;
+  border: 1px solid var(--light-border);
+  padding: 4px 12px;
+  border-radius: 99px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--light-text-secondary);
+}
+
+/* Custom Business interface mockup column */
+.interface-mockup-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.phone-screen-menu {
+  background: #F8FAFC;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.phone-menu-header {
+  background: #FFFFFF;
+  padding: 16px;
+  border-bottom: 1px solid var(--light-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.phone-menu-brand {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 14px;
+  color: var(--light-text-primary);
+}
+
+.phone-menu-cart {
+  font-size: 14px;
+}
+
+.phone-menu-body {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.menu-item-card {
+  background: #FFFFFF;
+  border: 1px solid var(--light-border);
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-align: left;
+}
+
+.menu-item-name {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--light-text-primary);
+}
+
+.menu-item-price {
+  font-size: 11px;
+  color: var(--primary-red);
+  font-weight: 600;
+}
+
+.menu-item-add {
+  background: var(--primary-red-light);
+  color: var(--primary-red);
+  font-weight: bold;
+  font-size: 12px;
+  border: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.order-customize-box {
+  background: #FFFFFF;
+  border: 1px solid var(--light-border);
+  border-radius: 8px;
+  padding: 10px;
+  text-align: left;
+}
+
+.order-option-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  color: var(--light-text-secondary);
+  margin-top: 4px;
+}
+
+.order-option-row input {
+  margin: 0;
+}
+
+.phone-menu-btn-red {
+  background: var(--primary-red);
+  color: #FFFFFF;
+  text-align: center;
+  padding: 12px;
+  border-radius: 8px;
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 700;
+  margin-top: auto;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(229, 62, 62, 0.2);
+}
+
+@media (max-width: 968px) {
+  .process-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .process-title {
+    font-size: 28px;
+    text-align: center;
+  }
+  .process-info {
+    align-items: center;
+  }
+  .steps-list {
+    width: 100%;
+  }
+}
