@@ -297,6 +297,47 @@ export const getProductsByCompany = async (idEmpresa: string): Promise<ProductDa
   }
 };
 
+export interface PersonalizacionData {
+  id: number;
+  logo: string;
+  portada: string;
+  orden_web: string[];
+  sucursales_activas: string[];
+  numero_whatsapp: string | null;
+  correo_general_info: string | null;
+  color_texto: string;
+  color_titulos: string;
+  color_fondo: string;
+  galeria_fotos: string[];
+  instagram: string;
+  facebook: string;
+  tiktok: string;
+  ID_Empresa: string;
+  meta_titulo?: string;
+  meta_descripcion?: string;
+}
+
+export const getPersonalizacionByCompany = async (idEmpresa: string): Promise<PersonalizacionData | null> => {
+  if (!supabaseUrl || !supabaseAnonKey) return null;
+  try {
+    const url = `${supabaseUrl}/rest/v1/personalizacion_web?ID_Empresa=eq.${encodeURIComponent(idEmpresa)}`;
+    const response = await fetch(url, {
+      method: 'GET',
+      headers: {
+        'apikey': supabaseAnonKey,
+        'Authorization': `Bearer ${supabaseAnonKey}`,
+        'Content-Type': 'application/json'
+      }
+    });
+    if (!response.ok) return null;
+    const data = await response.json();
+    return data && data.length > 0 ? data[0] : null;
+  } catch (err) {
+    console.error('Error fetching personalizacion:', err);
+    return null;
+  }
+};
+
 export interface OrderInput {
   cliente_nombre: string;
   direccion: string;

@@ -12,9 +12,10 @@ import { SignUpModal } from './components/SignUpModal';
 import { 
   getCompanyBySlug, 
   getBranchesByCompany, 
-  getProductsByCompany
+  getProductsByCompany,
+  getPersonalizacionByCompany
 } from './supabaseClient';
-import type { CompanyData, BranchData, ProductData } from './supabaseClient';
+import type { CompanyData, BranchData, ProductData, PersonalizacionData } from './supabaseClient';
 import { BusinessLandingPage } from './components/BusinessLandingPage';
 
 type RouteType = 'home' | 'loading' | 'landing' | 'not-found';
@@ -25,6 +26,7 @@ const App: React.FC = () => {
   const [company, setCompany] = useState<CompanyData | null>(null);
   const [branches, setBranches] = useState<BranchData[]>([]);
   const [products, setProducts] = useState<ProductData[]>([]);
+  const [personalizacion, setPersonalizacion] = useState<PersonalizacionData | null>(null);
 
   const loadLandingPage = async (pathSlug: string) => {
     setRoute('loading');
@@ -33,13 +35,15 @@ const App: React.FC = () => {
     try {
       const companyData = await getCompanyBySlug(pathSlug);
       if (companyData) {
-        const [branchesData, productsData] = await Promise.all([
+        const [branchesData, productsData, customData] = await Promise.all([
           getBranchesByCompany(companyData.idEmpresa),
-          getProductsByCompany(companyData.idEmpresa)
+          getProductsByCompany(companyData.idEmpresa),
+          getPersonalizacionByCompany(companyData.idEmpresa)
         ]);
         setCompany(companyData);
         setBranches(branchesData);
         setProducts(productsData);
+        setPersonalizacion(customData);
         setRoute('landing');
       } else {
         setRoute('not-found');
@@ -130,6 +134,7 @@ const App: React.FC = () => {
         company={company} 
         branches={branches} 
         products={products} 
+        personalizacion={personalizacion}
         onBackToHome={handleBackToHome}
       />
     );
