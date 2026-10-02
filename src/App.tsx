@@ -3,6 +3,7 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { BusinessTypeSelector } from './components/BusinessTypeSelector';
 import { PlatformScope } from './components/PlatformScope';
+import { AffiliatedCompanies } from './components/AffiliatedCompanies';
 import { Features } from './components/Features';
 import { DriverProcess } from './components/DriverProcess';
 import { CtaSection } from './components/CtaSection';
@@ -19,6 +20,28 @@ import type { CompanyData, BranchData, ProductData, PersonalizacionData } from '
 import { BusinessLandingPage } from './components/BusinessLandingPage';
 
 type RouteType = 'home' | 'loading' | 'landing' | 'not-found';
+
+
+class ErrorBoundary extends React.Component<any, any> {
+  constructor(props: any) {
+    super(props);
+    this.state = { hasError: false, error: null };
+  }
+  static getDerivedStateFromError(error: any) {
+    return { hasError: true, error };
+  }
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div style={{ padding: '20px', color: 'red', background: '#fee' }}>
+          <h2>App crashed</h2>
+          <pre>{String(this.state.error.stack || this.state.error)}</pre>
+        </div>
+      );
+    }
+    return this.props.children;
+  }
+}
 
 const App: React.FC = () => {
   const [route, setRoute] = useState<RouteType>('loading');
@@ -142,22 +165,22 @@ const App: React.FC = () => {
 
   // 4. Default reparto.mx Home Page
   return (
-    <>
+    <ErrorBoundary>
       <Navbar />
       <main>
         <Hero />
         <BusinessTypeSelector />
         <PlatformScope />
         <Features />
+        <AffiliatedCompanies />
         <DriverProcess />
         <CtaSection />
         <SuccessStories />
       </main>
       <Footer />
       <SignUpModal />
-    </>
+    </ErrorBoundary>
   );
 };
 
 export default App;
-

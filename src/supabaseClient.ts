@@ -409,3 +409,50 @@ export const createOrder = async (order: OrderInput): Promise<{ success: boolean
 };
 
 
+
+export interface RecentCompanyData {
+  idEmpresa: string;
+  NombreEmpresa: string;
+  urlEmpresaUnico: string;
+  logoEmpresa?: string;
+  portada?: string;
+}
+
+export const getRecentCompanies = async (): Promise<RecentCompanyData[]> => {
+  try {
+    const fetchHeaders = {
+      'apikey': supabaseAnonKey,
+      'Authorization': `Bearer ${supabaseAnonKey}`,
+      'Content-Type': 'application/json'
+    };
+    const empUrl = `${supabaseUrl}/rest/v1/Empresa?select=idEmpresa,NombreEmpresa,urlEmpresaUnico,logoEmpresa&order=created_at.desc&limit=10`;
+    const empRes = await fetch(empUrl, { headers: fetchHeaders });
+    const empData = await empRes.json();
+    
+    if (!empData || !Array.isArray(empData) || empData.length === 0) return [];
+    
+    const ids = empData.map((e: any) => e.idEmpresa).join(',');
+    const persUrl = `${supabaseUrl}/rest/v1/personalizacion_web?ID_Empresa=in.(${encodeURIComponent(ids)})&select=ID_Empresa,portada,logo`;
+    const persRes = await fetch(persUrl, { headers: fetchHeaders });
+    const persData = await persRes.json();
+    
+    const persMap = new Map();
+    if (persData && Array.isArray(persData)) {
+      persData.forEach((p: any) => {
+        persMap.set(p.ID_Empresa, p);
+      });
+    }
+    
+    return empData.map((emp: any) => {
+      const p = persMap.get(emp.idEmpresa);
+      return {
+        ...emp,
+        portada: (p?.portada && p.portada !== 'EMPTY') ? p.portada : undefined,
+        logoEmpresa: (p?.logo && p.logo !== 'EMPTY') ? p.logo : emp.logoEmpresa,
+      };
+    });
+  } catch (err) {
+    console.error('Error fetching recent companies:', err);
+    return [];
+  }
+};
