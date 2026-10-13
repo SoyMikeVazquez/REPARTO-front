@@ -42,13 +42,13 @@ export const BusinessLandingPage: React.FC<BusinessLandingPageProps> = ({
     // Set new values based on personalization
     const newTitle = (personalizacion?.meta_titulo && personalizacion.meta_titulo !== 'EMPTY') 
       ? personalizacion.meta_titulo 
-      : 'Reparto.mx | Software de Gestión y Optimización de Entregas';
+      : 'PideloSeguro.mx | Software de Gestión y Optimización de Entregas';
       
     const newDesc = (personalizacion?.meta_descripcion && personalizacion.meta_descripcion !== 'EMPTY')
       ? personalizacion.meta_descripcion 
-      : 'Optimiza tus entregas locales, planifica rutas eficientes y rastrea repartidores en tiempo real con Reparto.mx. La plataforma ideal para restaurantes, e-commerce y servicios de mensajería.';
+      : 'Optimiza tus entregas locales, planifica rutas eficientes y rastrea repartidores en tiempo real con PideloSeguro.mx. La plataforma ideal para restaurantes, e-commerce y servicios de mensajería.';
       
-    const newFavicon = company.logoEmpresa || '/favicon.png';
+    const newFavicon = company.logoEmpresa || '/logo-pideloseguro.png';
 
     document.title = newTitle;
     if (metaDesc) metaDesc.setAttribute('content', newDesc);
@@ -909,7 +909,7 @@ ${itemsText}
               <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
               <polyline points="9 22 9 12 15 12 15 22"></polyline>
             </svg>
-            <span>Volver a Reparto</span>
+            <span>Volver a PideloSeguro</span>
           </button>
         </div>
       </header>
@@ -931,12 +931,8 @@ ${itemsText}
           <p>© {new Date().getFullYear()} {company.NombreEmpresa}. Todos los derechos reservados.</p>
           <div className="powered-by">
             <span>Tecnología brindada por</span>
-            <a href="#" onClick={(e) => { e.preventDefault(); onBackToHome(); }} className="footer-reparto-link">
-              <svg width="16" height="16" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="footer-logo-svg">
-                <rect width="32" height="32" rx="8" fill="#E53E3E" />
-                <path d="M17 7L9 17H16L15 25L23 15H16L17 7Z" fill="white" />
-              </svg>
-              <span>reparto.mx</span>
+            <a href="#" onClick={(e) => { e.preventDefault(); onBackToHome(); }} className="footer-pideloseguro-link">
+              <img src="/logo-pideloseguro.png" alt="PideloSeguro" style={{ height: "24px", objectFit: "contain" }} />
             </a>
           </div>
         </div>

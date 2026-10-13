@@ -1,6 +1,6 @@
 <?php
 // ==========================================
-// REPARTO.MX - INTERCEPTOR DE METADATOS PHP
+// PIDELOSEGURO.MX - INTERCEPTOR DE METADATOS PHP
 // ==========================================
 
 $supabaseUrl = 'https://yrblfqkiyiartazyotkt.supabase.co';
@@ -47,8 +47,8 @@ if ($empresa_data && is_array($empresa_data) && count($empresa_data) > 0) {
     $pers_url = $supabaseUrl . '/rest/v1/personalizacion_web?ID_Empresa=eq.' . urlencode($id_empresa) . '&select=meta_titulo,meta_descripcion,logo';
     $pers_data = fetchSupabase($pers_url, $supabaseKey);
     
-    $newTitle = 'Reparto.mx | Software de Gestión y Optimización de Entregas';
-    $newDesc = 'Optimiza tus entregas locales, planifica rutas eficientes y rastrea repartidores en tiempo real con Reparto.mx. La plataforma ideal para restaurantes, e-commerce y servicios de mensajería.';
+    $newTitle = 'PideloSeguro.mx | Software de Gestión y Optimización de Entregas';
+    $newDesc = 'Optimiza tus entregas locales, planifica rutas eficientes y rastrea repartidores en tiempo real con PideloSeguro.mx. La plataforma ideal para restaurantes, e-commerce y servicios de mensajería.';
     $newFavicon = !empty($empresa['logoEmpresa']) ? $empresa['logoEmpresa'] : '/favicon.png';
     
     if ($pers_data && is_array($pers_data) && count($pers_data) > 0) {

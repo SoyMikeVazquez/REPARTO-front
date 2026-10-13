@@ -30,7 +30,7 @@ export const AffiliatedCompanies: React.FC = () => {
         <div className="affiliated-header">
           <span className="affiliated-tag">NUEVOS SOCIOS</span>
           <h2>Empresas recientemente afiliadas</h2>
-          <p>Descubre los negocios que ya confían en Reparto.mx para gestionar y potenciar sus entregas locales.</p>
+          <p>Descubre los negocios que ya confían en PideloSeguro.mx para gestionar y potenciar sus entregas locales.</p>
         </div>
         
         <div className="affiliated-grid">

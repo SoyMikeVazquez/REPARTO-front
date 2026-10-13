@@ -11,7 +11,7 @@ export const DeveloperApi: React.FC = () => {
       case 'curl':
         return (
           <>
-            <span className="code-line"><span className="code-keyword">curl</span> -X POST <span className="code-string">"https://api.reparto.mx/v1/deliveries"</span> \</span>
+            <span className="code-line"><span className="code-keyword">curl</span> -X POST <span className="code-string">"https://api.pideloseguro.mx/v1/deliveries"</span> \</span>
             <span className="code-line">  -H <span className="code-string">"Authorization: Bearer YOUR_API_KEY"</span> \</span>
             <span className="code-line">  -H <span className="code-string">"Content-Type: application/json"</span> \</span>
             <span className="code-line">  -d <span className="code-string">&#x27;&#123;</span></span>
@@ -24,7 +24,7 @@ export const DeveloperApi: React.FC = () => {
       case 'node':
         return (
           <>
-            <span className="code-line"><span className="code-keyword">const</span> SDK = <span className="code-function">require</span>(<span className="code-string">&#x27;@repartomx/sdk&#x27;</span>);</span>
+            <span className="code-line"><span className="code-keyword">const</span> SDK = <span className="code-function">require</span>(<span className="code-string">&#x27;@pideloseguromx/sdk&#x27;</span>);</span>
             <span className="code-line"><span className="code-keyword">const</span> client = <span className="code-keyword">new</span> SDK.<span className="code-function">Client</span>(&#123; apiKey: <span className="code-string">&#x27;YOUR_API_KEY&#x27;</span> &#125;);</span>
             <span className="code-line">&nbsp;</span>
             <span className="code-line"><span className="code-keyword">await</span> client.deliveries.<span className="code-function">create</span>(&#123;</span>
@@ -37,10 +37,10 @@ export const DeveloperApi: React.FC = () => {
       case 'python':
         return (
           <>
-            <span className="code-line"><span className="code-keyword">import</span> repartomx</span>
-            <span className="code-line">repartomx.api_key = <span className="code-string">"YOUR_API_KEY"</span></span>
+            <span className="code-line"><span className="code-keyword">import</span> pideloseguromx</span>
+            <span className="code-line">pideloseguromx.api_key = <span className="code-string">"YOUR_API_KEY"</span></span>
             <span className="code-line">&nbsp;</span>
-            <span className="code-line">delivery = repartomx.Delivery.<span className="code-function">create</span>(</span>
+            <span className="code-line">delivery = pideloseguromx.Delivery.<span className="code-function">create</span>(</span>
             <span className="code-line">  destination=&#123;<span className="code-string">"address"</span>: <span className="code-string">"Av. Reforma 405, CDMX"</span>&#125;,</span>
             <span className="code-line">  customer=&#123;<span className="code-string">"name"</span>: <span className="code-string">"Elena Torres"</span>, <span className="code-string">"phone"</span>: <span className="code-string">"+525512345678"</span>&#125;,</span>
             <span className="code-line">  items=[&#123;<span className="code-string">"name"</span>: <span className="code-string">"Pizza Grande"</span>, <span className="code-string">"qty"</span>: <span className="code-number">1</span>&#125;]</span>

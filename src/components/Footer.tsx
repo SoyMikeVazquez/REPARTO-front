@@ -10,11 +10,7 @@ export const Footer: React.FC = () => {
           {/* Left Side: Brand */}
           <div className="footer-brand-minimal">
             <a href="#" className="footer-logo" id="footer-logo">
-              <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect width="32" height="32" rx="8" fill="#E53E3E" />
-                <path d="M17 7L9 17H16L15 25L23 15H16L17 7Z" fill="white" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-              <span>reparto<span style={{ color: '#E53E3E' }}>.mx</span></span>
+              <img src="/logo-pideloseguro.png" alt="PideloSeguro" style={{ height: "32px", objectFit: "contain", marginBottom: "8px" }} />
             </a>
             <p className="footer-tagline">
               Gestión y optimización de repartidores locales.

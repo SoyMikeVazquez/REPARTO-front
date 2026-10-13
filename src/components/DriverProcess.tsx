@@ -24,7 +24,7 @@ export const DriverProcess: React.FC = () => {
               <div className="step-item">
                 <div className="step-number">2</div>
                 <div className="step-details">
-                  <span className="step-title">Descarga la App de Reparto</span>
+                  <span className="step-title">Descarga la App de PideloSeguro</span>
                   <p className="step-desc">Disponible sin costo para descargar directamente en sistemas iOS y Android.</p>
                 </div>
               </div>

@@ -32,12 +32,7 @@ export const Navbar: React.FC = () => {
       <header className={`navbar-wrapper ${isScrolled ? 'scrolled' : ''}`}>
         <div className="navbar-container">
           <a href="#" className="navbar-logo" id="nav-logo">
-            {/* Courier Delivery Bolt SVG Logo */}
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="32" height="32" rx="8" fill="#E53E3E" />
-              <path d="M17 7L9 17H16L15 25L23 15H16L17 7Z" fill="white" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-            <span>reparto<span className="logo-dot">.mx</span></span>
+            <img src="/logo-pideloseguro.png" alt="PideloSeguro" style={{ height: "40px", objectFit: "contain" }} />
           </a>
 
           {/* Desktop Navigation Links */}
@@ -95,8 +90,8 @@ export const Navbar: React.FC = () => {
 
           {/* Desktop Actions */}
           <div className="navbar-actions">
-            <a href="https://dashboard.reparto.mx " className="btn-login" id="btn-login-desktop">Iniciar Sesión</a>
-            <a href="https://dashboard.reparto.mx" className="btn btn-primary" id="btn-signup-desktop">Crear cuenta gratis</a>
+            <a href="https://dashboard.pideloseguro.mx " className="btn-login" id="btn-login-desktop">Iniciar Sesión</a>
+            <a href="https://dashboard.pideloseguro.mx" className="btn btn-primary" id="btn-signup-desktop">Crear cuenta gratis</a>
           </div>
 
           {/* Hamburger Mobile Toggle */}
@@ -161,8 +156,8 @@ export const Navbar: React.FC = () => {
         </div>
 
         <div className="drawer-actions">
-          <a href="https://dashboard.reparto.mx" onClick={() => setIsMobileOpen(false)} className="btn btn-outline" id="drawer-btn-login">Iniciar Sesión</a>
-          <a href="https://dashboard.reparto.mx" onClick={() => setIsMobileOpen(false)} className="btn btn-primary" id="drawer-btn-signup">Crear cuenta gratis</a>
+          <a href="https://dashboard.pideloseguro.mx" onClick={() => setIsMobileOpen(false)} className="btn btn-outline" id="drawer-btn-login">Iniciar Sesión</a>
+          <a href="https://dashboard.pideloseguro.mx" onClick={() => setIsMobileOpen(false)} className="btn btn-primary" id="drawer-btn-signup">Crear cuenta gratis</a>
         </div>
       </div>
 

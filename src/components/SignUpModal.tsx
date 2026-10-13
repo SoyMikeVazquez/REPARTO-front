@@ -84,7 +84,7 @@ export const SignUpModal: React.FC = () => {
         
         {/* Header */}
         <div className="modal-header">
-          <h3 className="modal-title">Comenzar con Reparto.mx</h3>
+          <h3 className="modal-title">Comenzar con PideloSeguro.mx</h3>
           <button className="modal-close-btn" onClick={handleClose} aria-label="Cerrar modal">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <line x1="18" y1="6" x2="6" y2="18"></line>

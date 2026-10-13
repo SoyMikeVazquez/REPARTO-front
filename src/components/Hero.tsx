@@ -57,7 +57,7 @@ export const Hero: React.FC = () => {
             <div style={{ position: 'relative', width: '100%', maxWidth: '480px', margin: '0 auto' }}>
               <img 
                 src="/chef_restaurant_delivery.png" 
-                alt="Chef de restaurante gestionando entregas con reparto.mx en su celular" 
+                alt="Chef de restaurante gestionando entregas con pideloseguro.mx en su celular" 
                 style={{ 
                   width: '100%', 
                   borderRadius: '20px', 

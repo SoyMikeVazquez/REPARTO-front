@@ -18,8 +18,9 @@ import {
 } from './supabaseClient';
 import type { CompanyData, BranchData, ProductData, PersonalizacionData } from './supabaseClient';
 import { BusinessLandingPage } from './components/BusinessLandingPage';
+import { UsuarioSegment } from './components/UsuarioSegment';
 
-type RouteType = 'home' | 'loading' | 'landing' | 'not-found';
+type RouteType = 'home' | 'loading' | 'landing' | 'not-found' | 'usuario';
 
 
 class ErrorBoundary extends React.Component<any, any> {
@@ -86,6 +87,8 @@ const App: React.FC = () => {
         setCompany(null);
         setBranches([]);
         setProducts([]);
+      } else if (path === 'usuario') {
+        setRoute('usuario');
       } else {
         loadLandingPage(path);
       }
@@ -95,6 +98,8 @@ const App: React.FC = () => {
     const initialPath = window.location.pathname.replace(/^\/|\/$/g, '');
     if (!initialPath || initialPath === 'index.html') {
       setRoute('home');
+    } else if (initialPath === 'usuario') {
+      setRoute('usuario');
     } else {
       loadLandingPage(initialPath);
     }
@@ -140,10 +145,10 @@ const App: React.FC = () => {
           </div>
           <h1 className="error-title">Tienda no encontrada</h1>
           <p className="error-message">
-            La dirección "{slug}" no corresponde a ningún negocio registrado o activo en nuestra plataforma de reparto.
+            La dirección "{slug}" no corresponde a ningún negocio registrado o activo en nuestra plataforma PideloSeguro.
           </p>
           <button className="btn btn-primary w-full" onClick={handleBackToHome}>
-            Volver a reparto.mx
+            Volver a pideloseguro.mx
           </button>
         </div>
       </div>
@@ -163,7 +168,16 @@ const App: React.FC = () => {
     );
   }
 
-  // 4. Default reparto.mx Home Page
+  // 4. Usuario Standalone Page
+  if (route === 'usuario') {
+    return (
+      <ErrorBoundary>
+        <UsuarioSegment />
+      </ErrorBoundary>
+    );
+  }
+
+  // 5. Default pideloseguro.mx Home Page
   return (
     <ErrorBoundary>
       <Navbar />

@@ -63,7 +63,7 @@ export const Features: React.FC = () => {
                     </svg>
                   </div>
                   <div>
-                    <span className="node-title">Motor Reparto.mx</span>
+                    <span className="node-title">Motor PideloSeguro.mx</span>
                     <div className="node-subtitle">Buscando conductor más cercano...</div>
                   </div>
                 </div>
@@ -168,7 +168,7 @@ export const Features: React.FC = () => {
             <span className="features-tag">Paso 3: Cliente</span>
             <h3 className="feature-info-title">El cliente estará en contacto con el repartidor</h3>
             <p className="feature-info-desc">
-              Mejora la satisfacción del cliente. Reparto.mx envía un enlace interactivo de seguimiento donde el cliente final chatea en vivo con el repartidor, eliminando dudas y facilitando la recepción de su paquete.
+              Mejora la satisfacción del cliente. PideloSeguro.mx envía un enlace interactivo de seguimiento donde el cliente final chatea en vivo con el repartidor, eliminando dudas y facilitando la recepción de su paquete.
             </p>
             <ul className="feature-bullet-list">
               <li className="feature-bullet-item">
@@ -230,7 +230,7 @@ export const Features: React.FC = () => {
             <span className="features-tag">Paso 4: Análisis</span>
             <h3 className="feature-info-title">Reportes detallados de tus entregas</h3>
             <p className="feature-info-desc">
-              Toma decisiones respaldadas por datos. Reparto.mx recopila métricas operativas clave para que conozcas la eficiencia de tus conductores, el volumen de pedidos diarios y la satisfacción de tus clientes.
+              Toma decisiones respaldadas por datos. PideloSeguro.mx recopila métricas operativas clave para que conozcas la eficiencia de tus conductores, el volumen de pedidos diarios y la satisfacción de tus clientes.
             </p>
             <ul className="feature-bullet-list">
               <li className="feature-bullet-item">

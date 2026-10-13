@@ -11,7 +11,7 @@ export const PlatformScope: React.FC = () => {
           <span className="scope-tag">Versatilidad total para las entregas de tu negocio</span>
           <h2 className="scope-title">Una solución para cada necesidad de envío</h2>
           <p className="scope-desc">
-            Reparto.mx se adapta al trayecto, origen y destino de tus entregas. Una sola plataforma con infinitas posibilidades.
+            PideloSeguro.mx se adapta al trayecto, origen y destino de tus entregas. Una sola plataforma con infinitas posibilidades.
           </p>
         </div>
 

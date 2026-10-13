@@ -683,7 +683,7 @@
   font-size: 13px;
 }
 
-.footer-reparto-link {
+.footer-pideloseguro-link {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -694,7 +694,7 @@
   transition: opacity 0.2s ease;
 }
 
-.footer-reparto-link:hover {
+.footer-pideloseguro-link:hover {
   opacity: 0.85;
 }
 

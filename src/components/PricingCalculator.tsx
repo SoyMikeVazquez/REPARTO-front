@@ -77,7 +77,7 @@ export const PricingCalculator: React.FC = () => {
           <span className="features-tag">Precios Justos</span>
           <h2 className="pricing-title">Calcula tu plan ideal</h2>
           <p className="pricing-desc">
-            Olvídate de comisiones abusivas por envío. Con Reparto.mx, gestionas tu propia flota de entregas a un precio fijo y transparente.
+            Olvídate de comisiones abusivas por envío. Con PideloSeguro.mx, gestionas tu propia flota de entregas a un precio fijo y transparente.
           </p>
         </div>
 
@@ -146,7 +146,7 @@ export const PricingCalculator: React.FC = () => {
           <div className="savings-card">
             <div className="savings-header">
               <span className="savings-tag">Tu Ahorro Estimado</span>
-              <h3 className="savings-title">Reparto.mx vs Apps de Delivery On-Demand</h3>
+              <h3 className="savings-title">PideloSeguro.mx vs Apps de Delivery On-Demand</h3>
             </div>
 
             <div className="savings-amount-box">
@@ -157,7 +157,7 @@ export const PricingCalculator: React.FC = () => {
             </div>
 
             <p className="savings-explanation">
-              Utilizar repartidores propios apoyados por la tecnología de ruteo de <strong>Reparto.mx</strong> reduce tu costo logístico de $45 MXN promedio por pedido a solo centavos. Esto incrementa de inmediato tus márgenes de ganancia.
+              Utilizar repartidores propios apoyados por la tecnología de ruteo de <strong>PideloSeguro.mx</strong> reduce tu costo logístico de $45 MXN promedio por pedido a solo centavos. Esto incrementa de inmediato tus márgenes de ganancia.
             </p>
 
             <a href="#signup" className="btn btn-primary" style={{ marginTop: '24px', width: '100%' }} id="pricing-cta-button">
