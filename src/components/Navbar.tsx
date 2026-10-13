@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import './Navbar.css';
+import { useLanguage } from '../context/LanguageContext';
+import logoImg from '../assets/logo-pidelo-seguro.png';
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [activeMobileDropdown, setActiveMobileDropdown] = useState<string | null>(null);
+  const { t, language, setLanguage } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,7 +35,12 @@ export const Navbar: React.FC = () => {
       <header className={`navbar-wrapper ${isScrolled ? 'scrolled' : ''}`}>
         <div className="navbar-container">
           <a href="#" className="navbar-logo" id="nav-logo">
-            <img src="/logo-pideloseguro.png" alt="PideloSeguro" style={{ height: "40px", objectFit: "contain" }} />
+            <img 
+              src={logoImg} 
+              alt="Pidelo Seguro" 
+              style={{ height: "40px", width: "40px", objectFit: "contain", borderRadius: "10px", display: "block" }} 
+            />
+            <span className="navbar-logo-text">Pidelo Seguro</span>
           </a>
 
           {/* Desktop Navigation Links */}
@@ -40,58 +48,85 @@ export const Navbar: React.FC = () => {
             <ul className="navbar-links">
               <li className="navbar-item">
                 <span className="navbar-link" id="nav-link-solutions">
-                  Soluciones
+                  {t('nav.solutions')}
                   <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </span>
                 <div className="nav-dropdown">
                   <a href="#restaurants" className="dropdown-link" id="nav-sol-restaurants">
-                    <span className="dropdown-title">Restaurantes</span>
-                    <span className="dropdown-desc">Despacha comida caliente más rápido y gestiona tus propios repartidores.</span>
+                    <span className="dropdown-title">{t('nav.restaurants')}</span>
+                    <span className="dropdown-desc">{t('nav.restaurants_desc')}</span>
                   </a>
                   <a href="#ecommerce" className="dropdown-link" id="nav-sol-ecommerce">
-                    <span className="dropdown-title">E-commerce</span>
-                    <span className="dropdown-desc">Envía productos al instante y automatiza la confirmación de entrega.</span>
+                    <span className="dropdown-title">{t('nav.ecommerce')}</span>
+                    <span className="dropdown-desc">{t('nav.ecommerce_desc')}</span>
                   </a>
                   <a href="#couriers" className="dropdown-link" id="nav-sol-couriers">
-                    <span className="dropdown-title">Empresas Courier</span>
-                    <span className="dropdown-desc">Optimiza tus flotas y rutas de distribución local a gran escala.</span>
+                    <span className="dropdown-title">{t('nav.couriers')}</span>
+                    <span className="dropdown-desc">{t('nav.couriers_desc')}</span>
                   </a>
                 </div>
               </li>
 
               <li className="navbar-item">
                 <span className="navbar-link" id="nav-link-features">
-                  Funcionalidades
+                  {t('nav.features')}
                   <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </span>
                 <div className="nav-dropdown">
                   <a href="#dispatch" className="dropdown-link" id="nav-feat-dispatch">
-                    <span className="dropdown-title">Asignación Rápida</span>
-                    <span className="dropdown-desc">Asignación y ruteo gestionado por los duseños de negocio.</span>
+                    <span className="dropdown-title">{t('nav.dispatch')}</span>
+                    <span className="dropdown-desc">{t('nav.dispatch_desc')}</span>
                   </a>
                   <a href="#driver-app" className="dropdown-link" id="nav-feat-driver">
-                    <span className="dropdown-title">App Repartidores</span>
-                    <span className="dropdown-desc">Navegación paso a paso, con control por código y hasta fotos de entrega.</span>
+                    <span className="dropdown-title">{t('nav.driver_app')}</span>
+                    <span className="dropdown-desc">{t('nav.driver_app_desc')}</span>
                   </a>
                   <a href="#live-tracking" className="dropdown-link" id="nav-feat-tracking">
-                    <span className="dropdown-title">Seguimiento en Tiempo Real</span>
-                    <span className="dropdown-desc">Brinda a tus clientes una experiencia de rastreo.</span>
+                    <span className="dropdown-title">{t('nav.tracking')}</span>
+                    <span className="dropdown-desc">{t('nav.tracking_desc')}</span>
                   </a>
                 </div>
               </li>
 
+              {/* Dedicated Brokers Link */}
+              <li className="navbar-item">
+                <a href="#brokers" className="navbar-link" id="nav-link-brokers">
+                  {t('nav.brokers')}
+                </a>
+              </li>
 
             </ul>
           </nav>
 
           {/* Desktop Actions */}
           <div className="navbar-actions">
-            <a href="https://dashboard.pideloseguro.mx " className="btn-login" id="btn-login-desktop">Iniciar Sesión</a>
-            <a href="https://dashboard.pideloseguro.mx" className="btn btn-primary" id="btn-signup-desktop">Crear cuenta gratis</a>
+            {/* Language Switcher */}
+            <div className="lang-toggle-wrapper">
+              <button 
+                type="button"
+                className={`lang-btn ${language === 'es' ? 'active' : ''}`}
+                onClick={() => setLanguage('es')}
+                title="Español"
+              >
+                ES
+              </button>
+              <span className="lang-divider">|</span>
+              <button 
+                type="button"
+                className={`lang-btn ${language === 'en' ? 'active' : ''}`}
+                onClick={() => setLanguage('en')}
+                title="English"
+              >
+                EN
+              </button>
+            </div>
+
+            <a href="https://dashboard.pideloseguro.com" className="btn-login" id="btn-login-desktop">{t('nav.login')}</a>
+            <a href="https://dashboard.pideloseguro.com" className="btn btn-primary" id="btn-signup-desktop">{t('nav.signup')}</a>
           </div>
 
           {/* Hamburger Mobile Toggle */}
@@ -122,42 +157,70 @@ export const Navbar: React.FC = () => {
         <div className="drawer-links">
           <div className="drawer-item">
             <div className="drawer-link" onClick={() => toggleMobileDropdown('solutions')} id="drawer-sol-toggle">
-              <span>Soluciones</span>
+              <span>{t('nav.solutions')}</span>
               <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ transform: activeMobileDropdown === 'solutions' ? 'rotate(180deg)' : 'none' }}>
                 <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
             {activeMobileDropdown === 'solutions' && (
               <div className="drawer-sublinks">
-                <a href="#restaurants" onClick={() => setIsMobileOpen(false)} className="drawer-sublink" id="drawer-sol-rest">Restaurantes</a>
-                <a href="#ecommerce" onClick={() => setIsMobileOpen(false)} className="drawer-sublink" id="drawer-sol-ecom">E-commerce</a>
-                <a href="#couriers" onClick={() => setIsMobileOpen(false)} className="drawer-sublink" id="drawer-sol-cour">Empresas Courier</a>
+                <a href="#restaurants" onClick={() => setIsMobileOpen(false)} className="drawer-sublink" id="drawer-sol-rest">{t('nav.restaurants')}</a>
+                <a href="#ecommerce" onClick={() => setIsMobileOpen(false)} className="drawer-sublink" id="drawer-sol-ecom">{t('nav.ecommerce')}</a>
+                <a href="#couriers" onClick={() => setIsMobileOpen(false)} className="drawer-sublink" id="drawer-sol-cour">{t('nav.couriers')}</a>
               </div>
             )}
           </div>
 
           <div className="drawer-item">
             <div className="drawer-link" onClick={() => toggleMobileDropdown('features')} id="drawer-feat-toggle">
-              <span>Funcionalidades</span>
+              <span>{t('nav.features')}</span>
               <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ transform: activeMobileDropdown === 'features' ? 'rotate(180deg)' : 'none' }}>
                 <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
             {activeMobileDropdown === 'features' && (
               <div className="drawer-sublinks">
-                <a href="#dispatch" onClick={() => setIsMobileOpen(false)} className="drawer-sublink" id="drawer-feat-disp">Despacho Automático</a>
-                <a href="#driver-app" onClick={() => setIsMobileOpen(false)} className="drawer-sublink" id="drawer-feat-driv">App Repartidores</a>
-                <a href="#live-tracking" onClick={() => setIsMobileOpen(false)} className="drawer-sublink" id="drawer-feat-track">Seguimiento en Vivo</a>
+                <a href="#dispatch" onClick={() => setIsMobileOpen(false)} className="drawer-sublink" id="drawer-feat-disp">{t('nav.dispatch')}</a>
+                <a href="#driver-app" onClick={() => setIsMobileOpen(false)} className="drawer-sublink" id="drawer-feat-driv">{t('nav.driver_app')}</a>
+                <a href="#live-tracking" onClick={() => setIsMobileOpen(false)} className="drawer-sublink" id="drawer-feat-track">{t('nav.tracking')}</a>
               </div>
             )}
           </div>
 
+          {/* Dedicated Brokers Mobile Link */}
+          <div className="drawer-item">
+            <a href="#brokers" onClick={() => setIsMobileOpen(false)} className="drawer-link" id="drawer-brokers-link">
+              <span>{t('nav.brokers')}</span>
+              <span className="nav-badge-pill">24/7</span>
+            </a>
+          </div>
 
         </div>
 
         <div className="drawer-actions">
-          <a href="https://dashboard.pideloseguro.mx" onClick={() => setIsMobileOpen(false)} className="btn btn-outline" id="drawer-btn-login">Iniciar Sesión</a>
-          <a href="https://dashboard.pideloseguro.mx" onClick={() => setIsMobileOpen(false)} className="btn btn-primary" id="drawer-btn-signup">Crear cuenta gratis</a>
+          {/* Mobile Language Switcher */}
+          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '8px' }}>
+            <div className="lang-toggle-wrapper">
+              <button 
+                type="button"
+                className={`lang-btn ${language === 'es' ? 'active' : ''}`}
+                onClick={() => setLanguage('es')}
+              >
+                Español (ES)
+              </button>
+              <span className="lang-divider">|</span>
+              <button 
+                type="button"
+                className={`lang-btn ${language === 'en' ? 'active' : ''}`}
+                onClick={() => setLanguage('en')}
+              >
+                English (EN)
+              </button>
+            </div>
+          </div>
+
+          <a href="https://dashboard.pideloseguro.com" onClick={() => setIsMobileOpen(false)} className="btn btn-outline" id="drawer-btn-login">{t('nav.login')}</a>
+          <a href="https://dashboard.pideloseguro.com" onClick={() => setIsMobileOpen(false)} className="btn btn-primary" id="drawer-btn-signup">{t('nav.signup')}</a>
         </div>
       </div>
 

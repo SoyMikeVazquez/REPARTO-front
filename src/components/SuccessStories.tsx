@@ -11,7 +11,7 @@ export const SuccessStories: React.FC = () => {
           <span className="stories-tag">Impacto Real</span>
           <h2 className="stories-title">Casos de éxito de nuestros clientes</h2>
           <p className="stories-desc">
-            Descubre cómo diversos negocios locales transformaron su servicio de entregas utilizando PideloSeguro.mx para gestionar su logística.
+            Descubre cómo diversos negocios locales transformaron su servicio de entregas utilizando PideloSeguro para gestionar su logística.
           </p>
         </div>
 

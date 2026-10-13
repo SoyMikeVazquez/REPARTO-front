@@ -10,6 +10,7 @@ import { CtaSection } from './components/CtaSection';
 import { SuccessStories } from './components/SuccessStories';
 import { Footer } from './components/Footer';
 import { SignUpModal } from './components/SignUpModal';
+import { LanguageProvider } from './context/LanguageContext';
 import { 
   getCompanyBySlug, 
   getBranchesByCompany, 
@@ -148,7 +149,7 @@ const App: React.FC = () => {
             La dirección "{slug}" no corresponde a ningún negocio registrado o activo en nuestra plataforma PideloSeguro.
           </p>
           <button className="btn btn-primary w-full" onClick={handleBackToHome}>
-            Volver a pideloseguro.mx
+            Volver a pideloseguro
           </button>
         </div>
       </div>
@@ -177,22 +178,24 @@ const App: React.FC = () => {
     );
   }
 
-  // 5. Default pideloseguro.mx Home Page
+  // 5. Default pideloseguro Home Page
   return (
     <ErrorBoundary>
-      <Navbar />
-      <main>
-        <Hero />
-        <BusinessTypeSelector />
-        <PlatformScope />
-        <Features />
-        <AffiliatedCompanies />
-        <DriverProcess />
-        <CtaSection />
-        <SuccessStories />
-      </main>
-      <Footer />
-      <SignUpModal />
+      <LanguageProvider>
+        <Navbar />
+        <main>
+          <Hero />
+          <BusinessTypeSelector />
+          <PlatformScope />
+          <Features />
+          <AffiliatedCompanies />
+          <DriverProcess />
+          <CtaSection />
+          <SuccessStories />
+        </main>
+        <Footer />
+        <SignUpModal />
+      </LanguageProvider>
     </ErrorBoundary>
   );
 };

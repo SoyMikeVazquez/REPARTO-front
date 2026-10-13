@@ -10,23 +10,23 @@ export const Features: React.FC = () => {
         <div className="feature-row" id="dispatch">
           {/* Left Info */}
           <div className="feature-info">
-            <span className="features-tag">Paso 1: Despacho</span>
-            <h3 className="feature-info-title">Asignación automática y despacho sin fricciones</h3>
+            <span className="features-tag">Características • Despacho Automatizado</span>
+            <h3 className="feature-info-title">Asignación express de comida caliente y paquetes</h3>
             <p className="feature-info-desc">
-              Optimiza tus operaciones y reduce el trabajo administrativo. Nuestro sistema de ruteo analiza la ubicación, capacidad y carga de trabajo de tus repartidores para despachar cada pedido al instante.
+              Diseñado especialmente para el ritmo acelerado de tu cocina y negocio. Nuestro sistema despacha cada orden al instante justo cuando está lista, asegurando que tus platillos lleguen calientes a tus comensales, con la flexibilidad de transportar también paquetes o compras locales sin demoras.
             </p>
             <ul className="feature-bullet-list">
               <li className="feature-bullet-item">
                 <div className="feature-bullet-icon">✓</div>
-                <span className="feature-bullet-text">Asignación automática en menos de 2 segundos</span>
+                <span className="feature-bullet-text">Asignación automática en minutos</span>
               </li>
               <li className="feature-bullet-item">
                 <div className="feature-bullet-icon">✓</div>
-                <span className="feature-bullet-text">Agrupación inteligente de órdenes en la misma zona</span>
+                <span className="feature-bullet-text">Prioridad para comida caliente y repartidores con mochila térmica</span>
               </li>
               <li className="feature-bullet-item">
                 <div className="feature-bullet-icon">✓</div>
-                <span className="feature-bullet-text">Reducción total de tiempos muertos en despacho</span>
+                <span className="feature-bullet-text">Versatilidad total: platillos de restaurante y paquetería local</span>
               </li>
             </ul>
           </div>
@@ -36,18 +36,21 @@ export const Features: React.FC = () => {
             <div className="dispatch-visual">
               <div className="visual-node">
                 <div className="visual-node-details">
-                  <div className="node-icon-box">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                      <polyline points="14 2 14 8 20 8"></polyline>
+                  <div className="node-icon-box" style={{ background: 'rgba(230, 0, 0, 0.1)', color: 'var(--primary-red)' }}>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+                      <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+                      <line x1="6" y1="1" x2="6" y2="4"></line>
+                      <line x1="10" y1="1" x2="10" y2="4"></line>
+                      <line x1="14" y1="1" x2="14" y2="4"></line>
                     </svg>
                   </div>
                   <div>
-                    <span className="node-title">Orden Entrante #2045</span>
-                    <div className="node-subtitle">Dirección: Av. Juárez 140</div>
+                    <span className="node-title">Orden de Restaurante #2045 (Hamburguesa & Bebida)</span>
+                    <div className="node-subtitle">Listo en cocina • Av. Juárez 140 (Comida caliente o paquete)</div>
                   </div>
                 </div>
-                <span className="node-status-badge node-status-assigned">Recibido</span>
+                <span className="node-status-badge node-status-assigned">Listo en Cocina</span>
               </div>
 
               <div className="dispatch-flow-line">
@@ -63,8 +66,8 @@ export const Features: React.FC = () => {
                     </svg>
                   </div>
                   <div>
-                    <span className="node-title">Motor PideloSeguro.mx</span>
-                    <div className="node-subtitle">Buscando conductor más cercano...</div>
+                    <span className="node-title">Motor Inteligente PideloSeguro</span>
+                    <div className="node-subtitle">Localizando repartidor con mochila térmica más cercano...</div>
                   </div>
                 </div>
               </div>
@@ -76,85 +79,113 @@ export const Features: React.FC = () => {
               <div className="visual-node" style={{ borderColor: 'rgba(16, 185, 129, 0.3)', background: 'rgba(16, 185, 129, 0.04)' }}>
                 <div className="visual-node-details">
                   <div className="node-icon-box" style={{ background: 'rgba(16, 185, 129, 0.1)', color: '#10B981' }}>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                      <circle cx="12" cy="7" r="4"></circle>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                      <circle cx="18.5" cy="17.5" r="3.5"></circle>
+                      <circle cx="5.5" cy="17.5" r="3.5"></circle>
+                      <circle cx="15" cy="5" r="1"></circle>
+                      <path d="M12 17.5V14l-3-3 4-3 2 3h2"></path>
                     </svg>
                   </div>
                   <div>
-                    <span className="node-title">Conductor Asignado</span>
-                    <div className="node-subtitle">Jesús Gómez (A 1.2 km de distancia)</div>
+                    <span className="node-title">Repartidor Asignado en 2s</span>
+                    <div className="node-subtitle">Jesús Gómez (Mochila térmica • A 1.2 km de tu local)</div>
                   </div>
                 </div>
-                <span className="node-status-badge" style={{ background: '#10B981', color: '#FFFFFF' }}>Despachado</span>
+                <span className="node-status-badge" style={{ background: '#10B981', color: '#FFFFFF' }}>En camino</span>
               </div>
             </div>
           </div>
         </div>
 
-        {/* SECTION 2: Visualización de cómo el repartidor va en tiempo real */}
-        <div className="feature-row reverse" id="driver-app">
+        {/* SECTION 2: Gestor de flotilla / Broker dedicado */}
+        <div className="feature-row reverse" id="brokers">
           {/* Left Info */}
           <div className="feature-info">
-            <span className="features-tag">Paso 2: Ruta</span>
-            <h3 className="feature-info-title">Visualización de cómo el repartidor va en tiempo real</h3>
+            <span className="features-tag">Características • Gestor de Flotilla (Broker)</span>
+            <h3 className="feature-info-title">Un Broker dedicado a tu flotilla para entregas en tiempo y forma</h3>
             <p className="feature-info-desc">
-              Otorga a tus repartidores las mejores herramientas para navegar la ciudad. Nuestra interfaz de ruteo traza el camino exacto, evitando congestión vial y optimizando la secuencia de paradas de entrega.
+              Tu restaurante o negocio nunca estará solo. Te asignamos un gestor logístico dedicado que supervisa en tiempo real cada viaje de tus repartidores, coordina rutas, atiende imprevistos viales y garantiza que cada platillo o paquete llegue puntual y en perfectas condiciones.
             </p>
             <ul className="feature-bullet-list">
               <li className="feature-bullet-item">
                 <div className="feature-bullet-icon">✓</div>
-                <span className="feature-bullet-text">Navegación fluida y cálculo de ruta rápido</span>
+                <span className="feature-bullet-text">Supervisión activa de cada viaje de principio a fin</span>
               </li>
               <li className="feature-bullet-item">
                 <div className="feature-bullet-icon">✓</div>
-                <span className="feature-bullet-text">Indicaciones de calles y puntos de entrega</span>
+                <span className="feature-bullet-text">Resolución inmediata de incidencias sin distraer a tu cocina</span>
               </li>
               <li className="feature-bullet-item">
                 <div className="feature-bullet-icon">✓</div>
-                <span className="feature-bullet-text">Rastreo de velocidad y GPS activo en mapa</span>
+                <span className="feature-bullet-text">Garantía de repartidores activos en horas pico y fines de semana</span>
               </li>
             </ul>
           </div>
 
-          {/* Right Visual Layout: Driver app simulation path offset */}
+          {/* Right Visual Layout: Broker Console Mockup */}
           <div className="feature-visual-panel">
-            <div className="phone-emulator">
-              <div className="phone-screen">
-                <div className="phone-header">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                    <polygon points="3 11 22 2 13 21 11 13 3 11"></polygon>
-                  </svg>
-                  <span className="phone-header-title">En Ruta</span>
+            <div className="broker-feature-card">
+              <div className="broker-fc-header">
+                <div className="broker-fc-profile">
+                  <div className="broker-fc-avatar">
+                    CM
+                    <span className="broker-fc-online"></span>
+                  </div>
+                  <div className="broker-fc-info">
+                    <h4>Carlos Mendoza</h4>
+                    <span className="broker-fc-status">
+                      <span className="broker-fc-pulse"></span>
+                      Broker Asignado a tu Cuenta
+                    </span>
+                  </div>
                 </div>
-                <div className="driver-map-bg">
-                  {/* Banner Instruction */}
-                  <div className="nav-instruction-banner">
-                    <span className="nav-direction-arrow">↑</span>
-                    <span className="nav-direction-text">A 200m gira a la derecha en Av. Reforma</span>
+              </div>
+
+              <div className="broker-fc-stats">
+                <div>
+                  <span className="broker-fc-stat-val">14</span>
+                  <span className="broker-fc-stat-lbl">Viajes Activos</span>
+                </div>
+                <div>
+                  <span className="broker-fc-stat-val">99.7%</span>
+                  <span className="broker-fc-stat-lbl">A Tiempo</span>
+                </div>
+                <div>
+                  <span className="broker-fc-stat-val">&lt; 40s</span>
+                  <span className="broker-fc-stat-lbl">Resolución</span>
+                </div>
+              </div>
+
+              <div className="broker-fc-feed">
+                <div className="broker-fc-feed-item">
+                  <span className="broker-fc-feed-icon">🛵</span>
+                  <div>
+                    <p className="broker-fc-feed-text">Viaje #2048: Repartidor en ruta con comida caliente</p>
+                    <span className="broker-fc-feed-sub">Ruta óptima verificada • Llegada en 4 min</span>
                   </div>
+                </div>
 
-                  {/* SVG Paths for Roads */}
-                  <svg className="nav-path-svg">
-                    <path d="M 40 260 L 120 260 L 120 140 L 220 140" stroke="rgba(255, 255, 255, 0.15)" strokeWidth="8" strokeLinecap="round" fill="none" />
-                    <path d="M 40 260 L 120 260 L 120 140 L 180 140" stroke="rgba(229, 62, 62, 0.4)" strokeWidth="4" strokeLinecap="round" fill="none" />
-                  </svg>
-
-                  {/* Pin Destination */}
-                  <div className="nav-destination-marker">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                    </svg>
+                <div className="broker-fc-feed-item">
+                  <span className="broker-fc-feed-icon">💬</span>
+                  <div>
+                    <p className="broker-fc-feed-text">Incidencia atendida por Broker</p>
+                    <span className="broker-fc-feed-sub">Confirmó número de departamento en 30s sin demoras</span>
                   </div>
+                </div>
 
-                  {/* Animated Driver Pin moving along path */}
-                  <div className="nav-driver-marker-animated"></div>
-
-                  {/* Floating ETA */}
-                  <div className="nav-floating-eta">
-                    <span>ETA: 8 min</span>
-                    <span style={{ color: '#E53E3E' }}>1.4 km</span>
+                <div className="broker-fc-feed-item">
+                  <span className="broker-fc-feed-icon">⚡</span>
+                  <div>
+                    <p className="broker-fc-feed-text">Flotilla balanceada para hora pico</p>
+                    <span className="broker-fc-feed-sub">4 repartidores listos en la zona de tu negocio</span>
                   </div>
+                </div>
+              </div>
+
+              <div className="broker-fc-footer">
+                <div className="broker-fc-badge">
+                  <span style={{ color: '#10B981' }}>✓</span>
+                  <span>Soporte directo por WhatsApp o llamada</span>
                 </div>
               </div>
             </div>
@@ -165,7 +196,7 @@ export const Features: React.FC = () => {
         <div className="feature-row" id="live-tracking">
           {/* Left Info */}
           <div className="feature-info">
-            <span className="features-tag">Paso 3: Cliente</span>
+            <span className="features-tag">Características • Comunicación con el Cliente</span>
             <h3 className="feature-info-title">El cliente estará en contacto con el repartidor</h3>
             <p className="feature-info-desc">
               Mejora la satisfacción del cliente. PideloSeguro.mx envía un enlace interactivo de seguimiento donde el cliente final chatea en vivo con el repartidor, eliminando dudas y facilitando la recepción de su paquete.
@@ -192,17 +223,17 @@ export const Features: React.FC = () => {
               <div className="phone-screen phone-screen-tracking">
                 <div className="tracking-header">
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <span className="logo-dot" style={{ color: '#E53E3E', fontSize: '14px' }}>●</span>
+                    <span className="logo-dot" style={{ color: 'var(--primary-red)', fontSize: '14px' }}>●</span>
                     <span style={{ fontSize: '12px', fontWeight: '700' }}>Seguimiento en Vivo</span>
                   </div>
                 </div>
                 
                 <div className="chat-bubble-container">
                   <div className="chat-bubble driver">
-                    ¡Hola! Ya voy llegando con tu paquete a tu domicilio.
+                    ¡Hola! Tu pedido acaba de salir de cocina en mochila térmica y va en camino.
                   </div>
                   <div className="chat-bubble customer">
-                    ¡Excelente, muchas gracias! Ya te espero en la entrada.
+                    ¡Perfecto, muchas gracias! Ya te espero en la entrada.
                   </div>
                 </div>
 
@@ -210,7 +241,7 @@ export const Features: React.FC = () => {
                   <div className="tracking-driver-avatar">JG</div>
                   <div className="tracking-driver-info">
                     <span className="tracking-driver-name">Jesús Gómez</span>
-                    <span className="tracking-driver-vehicle">Bicicleta Eléctrica</span>
+                    <span className="tracking-driver-vehicle">Mochila Térmica • Entrega Rápida</span>
                   </div>
                   <div style={{ marginLeft: 'auto', width: '28px', height: '28px', borderRadius: '50%', background: 'var(--primary-red)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5">
@@ -223,47 +254,51 @@ export const Features: React.FC = () => {
           </div>
         </div>
 
-        {/* SECTION 4: Reportes detallados de tus entregas */}
+        {/* SECTION 4: Gestión de pedidos, entregas, POS, inventario y más */}
         <div className="feature-row reverse" id="reports">
           {/* Left Info */}
           <div className="feature-info">
-            <span className="features-tag">Paso 4: Análisis</span>
-            <h3 className="feature-info-title">Reportes detallados de tus entregas</h3>
+            <span className="features-tag">Características • Control Total de tu Negocio</span>
+            <h3 className="feature-info-title">Gestiona pedidos, entregas, punto de venta, inventario y más</h3>
             <p className="feature-info-desc">
-              Toma decisiones respaldadas por datos. PideloSeguro.mx recopila métricas operativas clave para que conozcas la eficiencia de tus conductores, el volumen de pedidos diarios y la satisfacción de tus clientes.
+              Centraliza toda la operación de tu negocio en una sola plataforma. Administra comandas en cocina o mostrador, cobra con punto de venta integrado (POS), controla tus existencias de inventario en tiempo real y supervisa tus repartidores sin complicaciones.
             </p>
             <ul className="feature-bullet-list">
               <li className="feature-bullet-item">
                 <div className="feature-bullet-icon">✓</div>
-                <span className="feature-bullet-text">Volumen de envíos semanales y mensuales</span>
+                <span className="feature-bullet-text">Control de pedidos y entregas en tiempo real</span>
               </li>
               <li className="feature-bullet-item">
                 <div className="feature-bullet-icon">✓</div>
-                <span className="feature-bullet-text">Tiempos promedio de entrega y distancia recorrida</span>
+                <span className="feature-bullet-text">Punto de venta (POS) y cobros de mostrador</span>
               </li>
               <li className="feature-bullet-item">
                 <div className="feature-bullet-icon">✓</div>
-                <span className="feature-bullet-text">Porcentaje de éxito y satisfacción del cliente</span>
+                <span className="feature-bullet-text">Control de inventario e insumos sin desfases</span>
+              </li>
+              <li className="feature-bullet-item">
+                <div className="feature-bullet-icon">✓</div>
+                <span className="feature-bullet-text">Métricas operativas y reportes de rendimiento</span>
               </li>
             </ul>
           </div>
 
-          {/* Right Visual Layout: Analytics report chart */}
+          {/* Right Visual Layout: Analytics & POS / Inventory dashboard */}
           <div className="feature-visual-panel">
             <div className="report-visual-dashboard">
               <div className="report-header-row">
-                <span className="report-header-title">Eficiencia de Envíos</span>
-                <span className="report-timeframe">Esta semana</span>
+                <span className="report-header-title">Panel Operativo de Negocio</span>
+                <span className="report-timeframe">En vivo</span>
               </div>
               
               <div className="report-metrics-row">
                 <div className="report-metric-card">
-                  <div className="report-metric-val">98.4%</div>
-                  <div className="report-metric-lbl">Entregas a tiempo</div>
+                  <div className="report-metric-val">148</div>
+                  <div className="report-metric-lbl">Pedidos y POS hoy</div>
                 </div>
                 <div className="report-metric-card">
-                  <div className="report-metric-val">18 min</div>
-                  <div className="report-metric-lbl">Tiempo prom.</div>
+                  <div className="report-metric-val">99.2%</div>
+                  <div className="report-metric-lbl">Inventario al 100%</div>
                 </div>
               </div>
 

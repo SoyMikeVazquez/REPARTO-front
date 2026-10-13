@@ -3,6 +3,7 @@ import type { CompanyData, BranchData, ProductData, PersonalizacionData } from '
 import { createOrder } from '../supabaseClient';
 import { sendOrderEmail } from '../resendClient';
 import { RouteMap } from './RouteMap';
+import logoImg from '../assets/logo-pidelo-seguro.png';
 import './BusinessLandingPage.css';
 
 interface BusinessLandingPageProps {
@@ -42,11 +43,11 @@ export const BusinessLandingPage: React.FC<BusinessLandingPageProps> = ({
     // Set new values based on personalization
     const newTitle = (personalizacion?.meta_titulo && personalizacion.meta_titulo !== 'EMPTY') 
       ? personalizacion.meta_titulo 
-      : 'PideloSeguro.mx | Software de Gestión y Optimización de Entregas';
+      : 'PideloSeguro | Software de Gestión y Optimización de Entregas';
       
     const newDesc = (personalizacion?.meta_descripcion && personalizacion.meta_descripcion !== 'EMPTY')
       ? personalizacion.meta_descripcion 
-      : 'Optimiza tus entregas locales, planifica rutas eficientes y rastrea repartidores en tiempo real con PideloSeguro.mx. La plataforma ideal para restaurantes, e-commerce y servicios de mensajería.';
+      : 'Optimiza tus entregas locales, planifica rutas eficientes y rastrea repartidores en tiempo real con PideloSeguro. La plataforma ideal para restaurantes, e-commerce y servicios de mensajería.';
       
     const newFavicon = company.logoEmpresa || '/logo-pideloseguro.png';
 
@@ -931,8 +932,9 @@ ${itemsText}
           <p>© {new Date().getFullYear()} {company.NombreEmpresa}. Todos los derechos reservados.</p>
           <div className="powered-by">
             <span>Tecnología brindada por</span>
-            <a href="#" onClick={(e) => { e.preventDefault(); onBackToHome(); }} className="footer-pideloseguro-link">
-              <img src="/logo-pideloseguro.png" alt="PideloSeguro" style={{ height: "24px", objectFit: "contain" }} />
+            <a href="#" onClick={(e) => { e.preventDefault(); onBackToHome(); }} className="footer-pideloseguro-link" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+              <img src={logoImg} alt="Pidelo Seguro" style={{ height: "24px", width: "24px", objectFit: "contain", borderRadius: "6px" }} />
+              <span style={{ fontWeight: 700, fontSize: '14px', color: '#0F172A' }}>Pidelo Seguro</span>
             </a>
           </div>
         </div>

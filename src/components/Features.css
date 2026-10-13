@@ -104,7 +104,7 @@
 }
 
 .visual-node {
-  background: var(--light-card);
+  background: #FFFFFF;
   border: 1px solid var(--light-border);
   border-radius: 12px;
   padding: 12px 16px;
@@ -112,6 +112,7 @@
   align-items: center;
   justify-content: space-between;
   position: relative;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
 }
 
 .visual-node-details {
@@ -187,10 +188,10 @@
 .phone-emulator {
   width: 240px;
   height: 440px;
-  background: #0B0F19;
+  background: #FFFFFF;
   border-radius: 36px;
-  border: 10px solid #1E293B;
-  box-shadow: var(--shadow-xl);
+  border: 8px solid #0F172A;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -255,8 +256,8 @@
 /* --- VISUAL 2: DRIVER APP NAVIGATION --- */
 .driver-map-bg {
   flex: 1;
-  background: #0E1325;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1.5px, transparent 1.5px);
+  background: #FFFFFF;
+  background-image: radial-gradient(#E2E8F0 1.5px, transparent 1.5px);
   background-size: 20px 20px;
   position: relative;
   overflow: hidden;
@@ -342,15 +343,17 @@
 
 /* --- VISUAL 3: CUSTOMER CHAT & MAP --- */
 .phone-screen-tracking {
-  background-color: #0E1325;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1.5px, transparent 1.5px);
+  background-color: #FFFFFF;
+  background-image: radial-gradient(#E2E8F0 1.5px, transparent 1.5px);
   background-size: 20px 20px;
-  color: #FFFFFF;
+  color: var(--light-text-primary);
 }
 
 .tracking-header {
   padding: 16px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid var(--light-border);
+  background: #FFFFFF;
+  color: var(--light-text-primary);
 }
 
 .chat-bubble-container {
@@ -372,8 +375,9 @@
 }
 
 .chat-bubble.driver {
-  background: rgba(255, 255, 255, 0.08);
-  color: #FFFFFF;
+  background: #F1F5F9;
+  color: var(--light-text-primary);
+  border: 1px solid var(--light-border);
   align-self: flex-start;
   border-bottom-left-radius: 2px;
   animation-delay: 0.5s;
@@ -400,10 +404,11 @@
   align-items: center;
   gap: 12px;
   margin-top: auto;
-  background: rgba(255, 255, 255, 0.03);
+  background: #F8FAFC;
   padding: 12px;
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--light-border);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .tracking-driver-avatar {
@@ -427,22 +432,23 @@
 .tracking-driver-name {
   font-size: 12px;
   font-weight: 700;
+  color: var(--light-text-primary);
 }
 
 .tracking-driver-vehicle {
   font-size: 10px;
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--light-text-secondary);
 }
 
 /* --- VISUAL 4: REPORT DASHBOARD GRAPH --- */
 .report-visual-dashboard {
   width: 100%;
   max-width: 360px;
-  background: #F8FAFC;
+  background: #FFFFFF;
   border-radius: 12px;
   border: 1px solid var(--light-border);
   padding: 20px;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.06);
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -549,3 +555,163 @@
     min-height: 380px;
   }
 }
+
+/* Broker Console Card in Step 2 */
+.broker-feature-card {
+  width: 100%;
+  max-width: 400px;
+  background: #FFFFFF;
+  border: 1px solid var(--light-border);
+  border-radius: 20px;
+  padding: 24px;
+  color: var(--light-text-primary);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: left;
+}
+
+.broker-fc-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--light-border);
+  padding-bottom: 12px;
+}
+
+.broker-fc-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.broker-fc-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-red), #C50000);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 16px;
+  color: #FFFFFF;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(230, 0, 0, 0.25);
+}
+
+.broker-fc-online {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 12px;
+  height: 12px;
+  background: #10B981;
+  border: 2px solid #FFFFFF;
+  border-radius: 50%;
+}
+
+.broker-fc-info h4 {
+  font-size: 0.95rem;
+  color: var(--light-text-primary);
+  margin: 0 0 2px 0;
+  font-weight: 700;
+}
+
+.broker-fc-status {
+  font-size: 0.72rem;
+  color: #059669;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 600;
+}
+
+.broker-fc-pulse {
+  width: 6px;
+  height: 6px;
+  background: #10B981;
+  border-radius: 50%;
+  animation: pulse-dot 1.5s infinite;
+}
+
+.broker-fc-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  background: #F8FAFC;
+  border: 1px solid var(--light-border);
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center;
+}
+
+.broker-fc-stat-val {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--light-text-primary);
+  display: block;
+  font-family: var(--font-heading);
+}
+
+.broker-fc-stat-lbl {
+  font-size: 0.68rem;
+  color: var(--light-text-secondary);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.broker-fc-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.broker-fc-feed-item {
+  background: #F8FAFC;
+  border: 1px solid #EDF2F7;
+  border-radius: 10px;
+  padding: 10px 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.broker-fc-feed-icon {
+  font-size: 14px;
+  margin-top: 1px;
+}
+
+.broker-fc-feed-text {
+  font-size: 0.8rem;
+  color: var(--light-text-primary);
+  margin: 0;
+  line-height: 1.35;
+  font-weight: 600;
+}
+
+.broker-fc-feed-sub {
+  font-size: 0.7rem;
+  color: var(--light-text-secondary);
+  display: block;
+  margin-top: 2px;
+}
+
+.broker-fc-footer {
+  border-top: 1px solid var(--light-border);
+  padding-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.broker-fc-badge {
+  font-size: 0.75rem;
+  color: var(--light-text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+}
+

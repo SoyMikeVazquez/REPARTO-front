@@ -1,9 +1,9 @@
 :root {
   /* Colors */
-  --primary-red: #E53E3E;
-  --primary-red-hover: #C53030;
-  --primary-red-light: #FFF5F5;
-  --primary-red-glow: rgba(229, 62, 62, 0.25);
+  --primary-red: #E60000;
+  --primary-red-hover: #C50000;
+  --primary-red-light: #FFF0F0;
+  --primary-red-glow: rgba(230, 0, 0, 0.25);
   
   --dark-bg: #090A0F;
   --dark-card: #12131A;
